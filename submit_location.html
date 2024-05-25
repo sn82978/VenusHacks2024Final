@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Increment Column in Database</title>
+  <style>
+    .message {
+      font-size: 1.5em;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Database Update Example</h1>
+
+<select id="columnSelect">
+  <option value="column1">Column 1</option>
+  <option value="column2">Column 2</option>
+  <option value="column3">Column 3</option>
+</select>
+
+<p id="message" class="message">Submission Successful</p>
+
+<script>
+  // Function to handle the AJAX request
+  function incrementColumn(columnName) {
+    document.getElementById('message').style.display = 'block';
+
+    fetch('incrementColumn.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        action: 'incrementColumn',
+        columnName: columnName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        document.getElementById('message').textContent = 'Column Incremented Successfully';
+      } else {
+        document.getElementById('message').textContent = 'Error';
+        document.getElementById('message').style.color = 'red';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('message').textContent = 'Error';
+      document.getElementById('message').style.color = 'red';
+    });
+  }
+
+  // Event listener for the dropdown menu
+  document.getElementById('columnSelect').addEventListener('change', function() {
+    const selectedColumn = this.value;
+    incrementColumn(selectedColumn);
+  });
+
+  // Automatically trigger increment on page load (optional)
+  window.onload = function() {
+    const selectedColumn = document.getElementById('columnSelect').value;
+    incrementColumn(selectedColumn);
+  };
+</script>
+
+</body>
+</html>
