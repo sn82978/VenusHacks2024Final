@@ -1,1 +1,31 @@
 #map { height: 180px; }
+
+* {
+  
+}
+body {
+  background-color: rgb(181, 122, 194);
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+div nav {
+  background-color: purple;
+  border: 1px;
+  padding: 20px;
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+}
+ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(215, 145, 227);
+}
