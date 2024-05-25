@@ -10,72 +10,85 @@
   <title>Location Selector</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- Nav bar -->
 <body>
-  <div>
-    <nav>
-      <ul>
-        <li><a href="leaflet.html">Navigation</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="updates.html">Updates</a></li>
-        <li><a href="sos.html">SOS</a></li>
-      </ul>
-    </nav>
-  </div>
-</body>
+
+<!-- Nav bar -->
+<div>
+  <nav>
+    <ul>
+      <li><a href="leaflet.html">Navigation</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="updates.html">Updates</a></li>
+      <li><a href="sos.html">SOS</a></li>
+    </ul>
+  </nav>
+</div>
 
 <!-- Dropdown selection -->
-<body>
-  <h1>Select a Location to Update</h1>
-  <form action="submit_location.html" method="GET">
-      <label for="locations">Choose a location:</label>
-      <select name="location" id="locations">
-        <option value=Cross Cultural Center>Cross Cultural Center</option>
-        <option value=Biological Sciences Lecture Hall>Biological Sciences Lecture Hall</option>
-        <option value=Antill Pub and Grill>Antill Pub and Grill</option>
-        <option value=Physical Sciences Lecture Hall>Physical Sciences Lecture Hall</option>
-        <option value=Brandywine>Brandywine</option>
-        <option value=Social Sciences Lab>Social Sciences Lab</option>
-        <option value=Anteater Learning Pavilion>Anteater Learning Pavilion</option>
-        <option value=Blood Donation Center>Blood Donation Center</option>
-        <option value=UTC Taco Bell>UTC Taco Bell</option>
-        <option value=Humanities Hall>Humanities Hall</option>
-        <option value=Information and Computer Science 2>Information and Computer Science 2</option>
-        <option value=Natural Sciences II>Natural Sciences II</option>
-        <option value=Student Center>Student Center</option>
-        <option value=Science Library>Science Library</option>
-        <option value=Human Resources>Human Resources</option>
-        <option value=Natural Sciences I>Natural Sciences I</option>
-        <option value=Engineering Lecture Hall>Engineering Lecture Hall</option>
-        <option value=Anteatery>Anteatery</option>
-        <option value=Rowland Hall>Rowland Hall</option>
-        <option value=Information and Computer Science>Information and Computer Science</option>
-      </select>
-      <br><br>
-      <button type="submit">Submit</button>
-  </form>
-</body>
-</html>
+<h1>Select a Location to Update</h1>
+<select id="columnSelect">
+  <option value="Cross_Cultural_Center">Cross Cultural Center</option>
+  <option value="Biological_Sciences_Lecture_Hall">Biological Sciences Lecture Hall</option>
+  <option value="Antill_Pub_and_Grill">Antill Pub and Grill</option>
+  <option value="Physical_Sciences_Lecture_Hall">Physical Sciences Lecture Hall</option>
+  <option value="Brandywine">Brandywine</option>
+  <option value="Social_Sciences_Lab">Social Sciences Lab</option>
+  <option value="Anteater_Learning_Pavilion">Anteater Learning Pavilion</option>
+  <option value="Blood_Donation_Center">Blood Donation Center</option>
+  <option value="UTC_Taco_Bell">UTC Taco Bell</option>
+  <option value="Humanities_Hall">Humanities Hall</option>
+  <option value="Information_and_Computer_Science_2">Information and Computer Science 2</option>
+  <option value="Natural_Sciences_II">Natural Sciences II</option>
+  <option value="Student_Center">Student Center</option>
+  <option value="Science_Library">Science Library</option>
+  <option value="Human_Resources">Human Resources</option>
+  <option value="Natural_Sciences_I">Natural Sciences I</option>
+  <option value="Engineering_Lecture_Hall">Engineering Lecture Hall</option>
+  <option value="Anteatery">Anteatery</option>
+  <option value="Rowland_Hall">Rowland Hall</option>
+  <option value="Information_and_Computer_Science">Information and Computer Science</option>
+</select>
+<button id="submitButton">Submit</button>
 
-<!-- submit_location.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selected Location</title>
-</head>
-<body>
-  <h1>You have selected:</h1>
-  <p id="selected-location"></p>
+<p id="message" class="message">Submission Successful</p>
 
-  <script>
-      // Get the URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-      const location = urlParams.get('location');
+<script>
+  // Function to handle the AJAX request
+  function incrementColumn(columnName) {
+    document.getElementById('message').style.display = 'block';
 
-      // Display the selected location
-      document.getElementById('selected-location').textContent = location;
-  </script>
+    fetch('incrementColumn.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        action: 'incrementColumn',
+        columnName: columnName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        document.getElementById('message').textContent = 'Column Incremented Successfully';
+      } else {
+        document.getElementById('message').textContent = 'Error';
+        document.getElementById('message').style.color = 'red';
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('message').textContent = 'Error';
+      document.getElementById('message').style.color = 'red';
+    });
+  }
+
+  // Event listener for the submit button
+  document.getElementById('submitButton').addEventListener('click', function() {
+    const selectedColumn = document.getElementById('columnSelect').value;
+    incrementColumn(selectedColumn);
+  });
+</script>
+
 </body>
 </html>
