@@ -1,6 +1,6 @@
 <?php
 // Path to your SQLite database
-$dbPath = 'location.db';
+$dbPath = 'locations.db';
 
 header('Content-Type: application/json');
 
@@ -23,17 +23,17 @@ if ($request['action'] === 'incrementColumn' && isset($request['columnName'])) {
   
   // Ensure column name is valid
   $validColumns = [
-    'Cross_Cultural_Center',
-    'Biological_Sciences_Lecture_Hall',
-    'Antill_Pub_and_Grill',
-    'Physical_Sciences_Lecture_Hall',
+    'Cross Cultural Center',
+    'Biological Sciences Lecture Hall',
+    'Antill Pub and Grill',
+    'Physical Sciences Lecture Hall',
     'Brandywine',
-    'Social_Sciences_Lab',
-    'Anteater_Learning_Pavilion',
-    'Blood_Donation_Center',
-    'UTC_Taco_Bell',
-    'Humanities_Hall',
-    'Information_and_Computer_Science_2',
+    'Social Sciences Lab',
+    'Anteater Learning Pavilion',
+    'Blood Donation Center',
+    'UTC Taco Bell',
+    'Humanities Hall',
+    'Information and Computer_Science 2',
     'Natural_Sciences_II',
     'Student_Center',
     'Science_Library',
