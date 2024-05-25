@@ -84,48 +84,68 @@
         maxZoom: 19,
     }).addTo(map);
 
+    // Custom LeafIcon
+    var LeafIcon = L.Icon.extend({
+    options: {
+       iconSize:     [38, 95],
+       shadowSize:   [50, 64],
+       iconAnchor:   [22, 94],
+       shadowAnchor: [4, 62],
+       popupAnchor:  [-3, -76]
+    }
+});
+var greenIcon = new LeafIcon({
+    iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+    shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
+})
+
+var redIcon = new LeafIcon({
+    iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-red.png',
+    shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
+})
+
     // Marker
-    var Antill_Pub_and_Grill = L.marker([33.648907979703814, -117.84228943200577]).addTo(map);
+    var Antill_Pub_and_Grill = L.marker([33.648907979703814, -117.84228943200577], {icon: greenIcon}).addTo(map);
 var popup = Antill_Pub_and_Grill.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var Human_Resources = L.marker([33.641821309437944, -117.85507827433332]).addTo(map);
+var Human_Resources = L.marker([33.641821309437944, -117.85507827433332], {icon: greenIcon}).addTo(map);
 var popup = Human_Resources.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var UTC_Taco_Bell = L.marker([33.65092724934049, -117.84089060316923]).addTo(map);
+var UTC_Taco_Bell = L.marker([33.65092724934049, -117.84089060316923], {icon: greenIcon}).addTo(map);
 var popup = UTC_Taco_Bell.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var Anteatery = L.marker([33.651106356717115, -117.84501257949624]).addTo(map);
+var Anteatery = L.marker([33.651106356717115, -117.84501257949624], {icon: greenIcon}).addTo(map);
 var popup = Anteatery.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var Student_Center = L.marker([33.64884602406416, -117.84209110131476]).addTo(map);
+var Student_Center = L.marker([33.64884602406416, -117.84209110131476], {icon: greenIcon}).addTo(map);
 var popup = Student_Center.bindPopup('Floors: 0, 1, 2, 3, Stock: Yes!').openPopup();
-var Blood_Donation_Center = L.marker([33.64885938607441, -117.84198573015107]).addTo(map);
+var Blood_Donation_Center = L.marker([33.64885938607441, -117.84198573015107], {icon: greenIcon}).addTo(map);
 var popup = Blood_Donation_Center.bindPopup('Floor: 0, Stock: Yes!').openPopup();
-var Science_Library = L.marker([33.64566121023297, -117.8465525454967]).addTo(map);
+var Science_Library = L.marker([33.64566121023297, -117.8465525454967], {icon: greenIcon}).addTo(map);
 var popup = Science_Library.bindPopup('Floor: 2 & 5, Stock: Yes!').openPopup();
-var Anteater_Learning_Pavilion = L.marker([33.64699281631049, -117.84470457433308]).addTo(map);
+var Anteater_Learning_Pavilion = L.marker([33.64699281631049, -117.84470457433308], {icon: greenIcon}).addTo(map);
 var popup = Anteater_Learning_Pavilion.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var Brandywine = L.marker([33.645369135040376, -117.83931277008487]).addTo(map);
+var Brandywine = L.marker([33.645369135040376, -117.83931277008487], {icon: redIcon}).addTo(map);
 var popup = Brandywine.bindPopup('Floor: 1, Stock: No :(').openPopup();
-var Physical_Sciences_Lecture_Hall = L.marker([33.643373709175165, -117.84392903547517]).addTo(map);
+var Physical_Sciences_Lecture_Hall = L.marker([33.643373709175165, -117.84392903547517], {icon: redIcon}).addTo(map);
 var popup = Physical_Sciences_Lecture_Hall.bindPopup('Floor: 1, Stock: No :(').openPopup();
-var Social_Sciences_Lab = L.marker([33.64587647876144, -117.84005007433312]).addTo(map);
+var Social_Sciences_Lab = L.marker([33.64587647876144, -117.84005007433312], {icon: greenIcon}).addTo(map);
 var popup = Social_Sciences_Lab.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var Natural_Sciences_I = L.marker([33.64435904661711, -117.84573070316951]).addTo(map);
+var Natural_Sciences_I = L.marker([33.64435904661711, -117.84573070316951], {icon: redIcon}).addTo(map);
 var popup = Natural_Sciences_I.bindPopup('Floor: 1, Stock: No :(').openPopup();
-var Natural_Sciences_II = L.marker([33.643775351181084, -117.8456789166603]).addTo(map);
+var Natural_Sciences_II = L.marker([33.643775351181084, -117.8456789166603], {icon: greenIcon}).addTo(map);
 var popup = Natural_Sciences_II.bindPopup('Floor: 2, Stock: Yes!').openPopup();
-var Natural_Sciences_II = L.marker([33.643775351181084, -117.8456789166603]).addTo(map);
+var Natural_Sciences_II = L.marker([33.643775351181084, -117.8456789166603], {icon: redIcon}).addTo(map);
 var popup = Natural_Sciences_II.bindPopup('Floor: 1, Stock: No :(').openPopup();
-var Cross_Cultural_Center = L.marker([33.64772918537125, -117.8417857301511]).addTo(map);
+var Cross_Cultural_Center = L.marker([33.64772918537125, -117.8417857301511], {icon: greenIcon}).addTo(map);
 var popup = Cross_Cultural_Center.bindPopup('Floor: 0, Stock: Yes!').openPopup();
-var Rowland_Hall = L.marker([33.64449311501491, -117.84417934549687]).addTo(map);
+var Rowland_Hall = L.marker([33.64449311501491, -117.84417934549687], {icon: greenIcon}).addTo(map);
 var popup = Rowland_Hall.bindPopup('Floor: 5, Stock: Yes!').openPopup();
-var Biological_Sciences_Lecture_Hall = L.marker([33.64520588037231, -117.84579173335203]).addTo(map);
+var Biological_Sciences_Lecture_Hall = L.marker([33.64520588037231, -117.84579173335203], {icon: greenIcon}).addTo(map);
 var popup = Biological_Sciences_Lecture_Hall.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var Information_and_Computer_Science = L.marker([33.64429284640012, -117.84178584796749]).addTo(map);
+var Information_and_Computer_Science = L.marker([33.64429284640012, -117.84178584796749], {icon: redIcon}).addTo(map);
 var popup = Information_and_Computer_Science.bindPopup('Floor: 1, Stock: No :(').openPopup();
-var Humanities_Hall = L.marker([33.647285279199366, -117.84401197433294]).addTo(map);
+var Humanities_Hall = L.marker([33.647285279199366, -117.84401197433294], {icon: greenIcon}).addTo(map);
 var popup = Humanities_Hall.bindPopup('Floor: 1, Stock: Yes!').openPopup();
-var Engineering_Lecture_Hall = L.marker([33.644468578323874, -117.84067317433315]).addTo(map);
+var Engineering_Lecture_Hall = L.marker([33.644468578323874, -117.84067317433315], {icon: redIcon}).addTo(map);
 var popup = Engineering_Lecture_Hall.bindPopup('Floor: 1, Stock: No :(').openPopup();
-var Information_and_Computer_Science_2 = L.marker([33.643937214202865, -117.84170092367992]).addTo(map);
+var Information_and_Computer_Science_2 = L.marker([33.643937214202865, -117.84170092367992], {icon: greenIcon}).addTo(map);
 var popup = Information_and_Computer_Science_2.bindPopup('Floor: 1, Stock: Yes!').openPopup();
 
 </script>
