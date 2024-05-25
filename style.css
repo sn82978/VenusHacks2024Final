@@ -1,22 +1,41 @@
-* {
-  
+
+
+h1 {
+  font-family: "Poetsen One", sans-serif;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
 }
+
 body {
   background-color: rgb(181, 122, 194);
   font-family: "Poetsen One", sans-serif;
   font-weight: 400;
   font-style: normal;
   margin: 0;
-  padding: 0;
+  padding: 0 px;
 }
+
 div nav {
   background-color: purple;
   border: 1px;
   padding: 20px;
-  position: fixed; 
+  position: relative; 
   top: 0; 
   width: 100%;
+  font-size: 25px;
+  max-height: 100px;
 }
+
+div nav img {
+  border: 1px;
+  position: absolute;
+  height: 200px;
+  top: 0;
+  left: 5%;
+  align-self: flex-start;
+}
+
 ul {
   display: flex;
   list-style-type: none;
@@ -24,6 +43,17 @@ ul {
 }
 
 a {
+  font-family: "Poetsen One", sans-serif;
   text-decoration: none;
   color: rgb(215, 145, 227);
+  display: flex;
+}
+
+li.special-li a:hover{
+  transform: scale(1.2);
+}
+
+.events {
+  display: flex;
+  justify-content: center;
 }
