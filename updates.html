@@ -7,9 +7,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Location Selector</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Nav bar -->
 <body>
   <div>
     <nav>
@@ -21,5 +22,60 @@
       </ul>
     </nav>
   </div>
+</body>
+
+<!-- Dropdown selection -->
+<body>
+  <h1>Select a Location to Update</h1>
+  <form action="submit_location.html" method="GET">
+      <label for="locations">Choose a location:</label>
+      <select name="location" id="locations">
+        <option value=Cross Cultural Center>Cross Cultural Center</option>
+        <option value=Biological Sciences Lecture Hall>Biological Sciences Lecture Hall</option>
+        <option value=Antill Pub and Grill>Antill Pub and Grill</option>
+        <option value=Physical Sciences Lecture Hall>Physical Sciences Lecture Hall</option>
+        <option value=Brandywine>Brandywine</option>
+        <option value=Social Sciences Lab>Social Sciences Lab</option>
+        <option value=Anteater Learning Pavilion>Anteater Learning Pavilion</option>
+        <option value=Blood Donation Center>Blood Donation Center</option>
+        <option value=UTC Taco Bell>UTC Taco Bell</option>
+        <option value=Humanities Hall>Humanities Hall</option>
+        <option value=Information and Computer Science 2>Information and Computer Science 2</option>
+        <option value=Natural Sciences II>Natural Sciences II</option>
+        <option value=Student Center>Student Center</option>
+        <option value=Science Library>Science Library</option>
+        <option value=Human Resources>Human Resources</option>
+        <option value=Natural Sciences I>Natural Sciences I</option>
+        <option value=Engineering Lecture Hall>Engineering Lecture Hall</option>
+        <option value=Anteatery>Anteatery</option>
+        <option value=Rowland Hall>Rowland Hall</option>
+        <option value=Information and Computer Science>Information and Computer Science</option>
+      </select>
+      <br><br>
+      <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
+<!-- submit_location.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Location</title>
+</head>
+<body>
+  <h1>You have selected:</h1>
+  <p id="selected-location"></p>
+
+  <script>
+      // Get the URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const location = urlParams.get('location');
+
+      // Display the selected location
+      document.getElementById('selected-location').textContent = location;
+  </script>
 </body>
 </html>
