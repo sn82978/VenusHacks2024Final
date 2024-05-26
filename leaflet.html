@@ -15,6 +15,10 @@
           justify-content: center;
           width: 100%;
       }
+      .map-container img {
+        width: 40%;
+        position: relative;
+      }
       #map {
           height: 500px;
           width: 50%;
@@ -46,6 +50,7 @@
 <!-- Map Container -->
 <div class="map-container">
   <div id="map"></div>
+  <img src="legend.PNG">
 </div>
 
 <!-- Leaflet JS -->
@@ -71,25 +76,21 @@
 });
 var greenIcon = new LeafIcon({
     iconUrl: 'greenflag.PNG',
-    //shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
 
 var redIcon = new LeafIcon({
     iconUrl: 'redflag.PNG',
-    //shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
 
 var blueIcon = new LeafIcon({
     iconUrl: 'blueflag.PNG',
-    //shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
 
 var yellowIcon = new LeafIcon({
     iconUrl: 'yellowflag.PNG',
-    //shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
 
-    // Marker
+    // Restroom Markers
     var Antill_Pub_and_Grill = L.marker([33.648907979703814, -117.84228943200577], {icon: greenIcon}).addTo(map);
     var popup = Antill_Pub_and_Grill.bindPopup('Floor: 1, Stock: Yes!').openPopup();
     var Human_Resources = L.marker([33.641821309437944, -117.85507827433332], {icon: greenIcon}).addTo(map);
@@ -133,7 +134,7 @@ var yellowIcon = new LeafIcon({
     var Information_and_Computer_Science_2 = L.marker([33.643937214202865, -117.84170092367992], {icon: greenIcon}).addTo(map);
     var popup = Information_and_Computer_Science_2.bindPopup('Floor: 1, Stock: Yes!').openPopup();
 
-
+  // Pathway Markers
     var Aldrich_Park_Inner_Paths = L.marker([33.64596080687608, -117.84271292684176], {icon: blueIcon}).addTo(map);
     var Engineering_Plaza = L.marker([33.64291782134909, -117.83929747702149], {icon: blueIcon}).addTo(map);
     var Student_Center = L.marker([33.649317127520234, -117.8416949152118], {icon: blueIcon}).addTo(map);
