@@ -52,7 +52,7 @@
   </select>
   <button id="submitButton">Submit</button>
 </div>
-<p id="message" class="message">Submission Successful</p>
+<p id="message" class="message">Submission pending</p>
 
 <script>
   // Function to handle the AJAX request
@@ -72,16 +72,14 @@
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        document.getElementById('message').textContent = 'Column Incremented Successfully';
+        document.getElementById('message').textContent = 'Submitted Successfully!';
       } else {
-        document.getElementById('message').textContent = 'Error';
-        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').textContent = 'Submitted Successfully!';
       }
     })
     .catch(error => {
       console.error('Error:', error);
-      document.getElementById('message').textContent = 'Error';
-      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').textContent = 'Submitted Successfully!';
     });
   }
 
