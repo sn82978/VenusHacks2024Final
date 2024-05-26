@@ -104,3 +104,11 @@ option {
   justify-content: center;
   align-content: center;
 }
+
+span {
+  color: #EDE8BA;
+}
+
+.name {
+  color: purple;
+}
