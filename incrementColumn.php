@@ -23,7 +23,6 @@ if ($request['action'] === 'incrementColumn' && isset($request['columnName'])) {
     // Print the column name to the terminal
     printf("Column Name: %s\n", $columnName);
     // Alternatively, use error_log to print to the server's error log
-    // error_log("Column Name: $columnName");
 
     try {
         $sql = "UPDATE Location SET stock = stock + 1 WHERE bldg = :columnName";
