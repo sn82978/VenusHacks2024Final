@@ -3,79 +3,106 @@ h1 {
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
-}
-
-body {
+ }
+ 
+ 
+ body {
   background-color: rgb(181, 122, 194);
   font-family: "Poetsen One", sans-serif;
   font-weight: 400;
   font-style: normal;
   margin: 0;
   padding: 0 px;
-}
-
-div nav {
+ }
+ 
+ 
+ th {
+  font-size: 30px; /* Set font size for table header cells */
+  font-weight: bold; /* Optionally make header text bold */
+  color: purple;
+ }
+ 
+ 
+ div nav {
   background-color: purple;
   border: 1px;
   padding: 20px;
-  position: relative; 
-  top: 0; 
+  position: relative;
+  top: 0;
   width: 100%;
   font-size: 25px;
   max-height: 100px;
-}
-
-div nav img {
+ }
+ 
+ 
+ div nav img {
   border: 1px;
   position: absolute;
   height: 200px;
   top: 0;
   left: 5%;
   align-self: flex-start;
-}
-
-ul {
+ }
+ 
+ 
+ ul {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
-}
-
-a {
+ }
+ 
+ 
+ a {
   font-family: "Poetsen One", sans-serif;
   text-decoration: none;
   color: rgb(215, 145, 227);
   display: flex;
-}
-
-li.special-li a:hover{
+ }
+ 
+ 
+ li.special-li a:hover{
   transform: scale(1.2);
-}
-
-.events {
+ }
+ 
+ 
+ .events {
   display: flex;
+  font-size: 20px;
   justify-content: center;
-}
-
-button {
+  font-weight: light;
+ }
+ 
+ 
+ .eventstitle {
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+ }
+ 
+ 
+ button {
   font-family: "Poetsen One", sans-serif;
   font-size: 25px;
   border-radius: 20px;
   box-shadow: none;
   border: none;
   background-color: rgb(213, 184, 211);
-}
-
-button:hover {
+ }
+ 
+ 
+ button:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-button:active {
+ }
+ 
+ 
+ button:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-select {
+ }
+ 
+ 
+ select {
   font-family: "Poetsen One", sans-serif;
   font-size: 25px;
   border:0;
@@ -83,9 +110,10 @@ select {
   height:50px;
   border:1px solid #d8d8d8;
   width:350px;
-}
-
-.updates {
+ }
+ 
+ 
+ .updates {
   display: flex;
   padding: 0;
   margin: 0;
@@ -94,77 +122,88 @@ select {
   text-align: center;
   position: relative;
   z-index: 100;
-}
-
-option {
+ }
+ 
+ 
+ option {
   background-color: green;
-}
-
-.emergency-links {
+ }
+ 
+ 
+ .emergency-links {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-content: center;
-}
-
-span {
+ }
+ 
+ 
+ span {
   color: #EDE8BA;
-}
-
-.name {
+ }
+ 
+ 
+ .name {
   color: purple;
-}
-
-.sub-image {
+ }
+ 
+ 
+ .sub-image {
   display: flex;
   padding: 0;
   margin: 0;
   line-height: 0;
   justify-content: center;
   align-content: flex-start;
-}
-
-.sub-image img{
+ }
+ 
+ 
+ .sub-image img{
   margin: 0;
   height: 70%;
   width: 70%;
   object-fit: contain;
   top: 20%;
   position: absolute;
-}
-
-.map-legend {
+ }
+ 
+ 
+ .map-legend {
   align-content: space-around;
-}
-
-.map-legend img {
+ }
+ 
+ 
+ .map-legend img {
   width: 25%;
   position: fixed;
   left: 0;
   top: 50;
-}
-
-.sunset {
+ }
+ 
+ 
+ .sunset {
   align-content: space-around;
-}
-
-.sunset img {
+ }
+ 
+ 
+ .sunset img {
   width: 10%;
   position: fixed;
   right: 10%;
   top: 30%;
-}
-
-.center {
+ }
+ 
+ 
+ .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
-
-.gif-img {
+ }
+ 
+ 
+ .gif-img {
   align-content: center;
-}
 
 .gif-img img {
   width: 30%;
