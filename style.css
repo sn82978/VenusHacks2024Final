@@ -159,3 +159,18 @@ span {
   margin-right: auto;
   width: 50%;
 }
+
+.gif-img {
+  align-content: center;
+}
+
+.gif-img img {
+  width: 70%;
+  position: relative;
+  right: 10%;
+  top: 0;
+}
+
+.homepage {
+  align-content: center;
+}
