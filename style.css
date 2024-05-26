@@ -204,19 +204,16 @@ h1 {
  
  .gif-img {
   align-content: center;
- }
- 
- 
- .gif-img img {
-  width: 70%;
-  position: relative;
+
+.gif-img img {
+  width: 30%;
+  text-align: center;
   right: 10%;
   top: 0;
- }
- 
- 
- .homepage {
-  align-content: center;
- }
- 
- 
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
