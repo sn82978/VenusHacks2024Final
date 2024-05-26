@@ -92,6 +92,8 @@ select {
   justify-content: center;
   align-content: flex-start;
   text-align: center;
+  position: relative;
+  z-index: 100;
 }
 
 option {
