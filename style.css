@@ -130,3 +130,25 @@ span {
   top: 20%;
   position: absolute;
 }
+
+.map-legend {
+  align-content: space-around;
+}
+
+.map-legend img {
+  width: 25%;
+  position: fixed;
+  left: 0;
+  top: 50;
+}
+
+.sunset {
+  align-content: space-around;
+}
+
+.sunset img {
+  width: 10%;
+  position: fixed;
+  right: 10%;
+  top: 30%;
+}

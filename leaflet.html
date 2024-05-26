@@ -15,17 +15,13 @@
           justify-content: center;
           width: 100%;
       }
-      .map-container img {
-        width: 40%;
-        position: relative;
-      }
       #map {
           height: 500px;
           width: 50%;
           top: 50px; 
           border-radius: 20px;
           display: flex;
-          justify-content: space-around;
+          justify-content: center;
           align-content: flex-start;
       }
   </style>
@@ -49,8 +45,13 @@
 
 <!-- Map Container -->
 <div class="map-container">
+  <div class="map-legend">
+    <img src="legend.PNG">
+  </div>
   <div id="map"></div>
-  <img src="legend.PNG">
+  <div class="sunset">
+    <img src="sunset_7999511.png">
+  </div>
 </div>
 
 <!-- Leaflet JS -->
