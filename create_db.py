@@ -4,7 +4,7 @@ import random
 def add_num(c):
 
     c.execute("""
-        SELECT COUNT(*) FROM Location
+        SELECT COUNT(*) FROM Paths
     """)
     new_id = c.fetchone()[0] + 1
     return new_id
@@ -13,11 +13,30 @@ def add_num(c):
 def edit_database():
     conn = sqlite3.connect('locations.db')
     c = conn.cursor()
+    
+    #c.execute("""
+    #CREATE TABLE Paths(
+    #id INTEGER PRIMARY KEY,
+    #road TEXT ,
+    #lat REAL,
+    #lng REAL
+    #);
+    #""")
 
     c.execute("""
-        INSERT INTO Location (id, bldg, floor, lat, lng, stock)
-        VALUES (?, ?, ?, ?, ?, ?)
-    """, (add_num(c), "Information and Computer Science 2", 1, 33.643937214202865, -117.84170092367992, 1))
+       INSERT INTO Paths (id, road, lat, lng, light)
+       VALUES (?, ?, ?, ?, ?)
+        """, (add_num(c), "Ring Road", 33.64424605692703, -117.84462951054087, 1))
+
+    #c.execute("""
+    #    DELETE FROM Paths    
+    #    WHERE id<100;
+    #          """)
+
+    #c.execute("""
+    #    ALTER TABLE Paths
+    #    ADD light INTEGER;   
+    #          """)
 
     conn.commit()
     conn.close()
