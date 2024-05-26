@@ -167,12 +167,14 @@ span {
 }
 
 .gif-img img {
-  width: 70%;
-  position: relative;
+  width: 30%;
+  text-align: center;
   right: 10%;
   top: 0;
 }
 
 .homepage {
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
 }
