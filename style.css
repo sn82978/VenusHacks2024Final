@@ -40,6 +40,12 @@ ul {
   justify-content: space-around;
 }
 
+th {
+  font-size: 30px; /* Set font size for table header cells */
+  font-weight: bold; /* Optionally make header text bold */
+  color: purple;
+ }
+
 a {
   font-family: "Poetsen One", sans-serif;
   text-decoration: none;
